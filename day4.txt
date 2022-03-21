@@ -1,12 +1,13 @@
 public class Main {
-	public static void main(String[] args) {
-		Javalin app = Javalin.create();
+	public static void main(String[] args) { // Declaring the main method
+		Javalin app = Javalin.create(); //create a object Javalin
 
-		app.start();
+		app.start(); // Starting the Javalin app
 
 		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
+			Food myFood = new Food("carrots", "vegetable");//Food one class, here create one object myFood,In that constructor pass two string carrots and vegetable
+			ctx.result("You got: " + myFood.name); //Handler interface has a void return type. Here we are use a method like ctx.result(result) to set the response which will be returned to the user.
+                                                  // here it will display the carrots and vegetable
 		});
 	}
 }
