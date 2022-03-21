@@ -1,12 +1,13 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
+An HTML page creation on daily code review over the title COOK YOUR FOOD with necessary labels and a Submit button.
+<html> 
+	<head>  <!-- the head is for metadata(info about the webpage)-->
+		<title>Daily Code Review</title> <!-- Making the title of the page to be "Daily Code Review" -->                               
 	</head>
-	<body>
-		<h1>Cook your food!</h1>
+	<body> <!-- the body is anything that shows up on the page -->
+		<h1>Cook your food!</h1> <!-- Creating an header for the page named "Cook your food" -->
 		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
+			<label for="foodName">Food Name:</label> <!-- Created a label named foodname -->
+			<input id="foodName" name="foodName" type="text"> 
 			<br>
 			<button type="submit">Submit</button>
 		</form>
@@ -14,10 +15,14 @@
 </html>
 
 public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+	Javalin app = Javalin.create(); // to get the Javalin object, we call a static method from
+		                           // the Javalin class that returns the object
 
-	app.get("cook", ctx -> {
+	app.start(); // start up the server (start listening for HTTP requests)
+
+	app.get("cook", ctx -> { // tell the Javalin object how to respond to specific requests:
+		// how to respond to a GET request where the URI ends with "cook"
+
 		String foodSent = ctx.formParam("foodName");
 		String cookedFood = "cooked " + foodSent;
 		ctx.result("Here's your food! <br>" + cookedFood);
