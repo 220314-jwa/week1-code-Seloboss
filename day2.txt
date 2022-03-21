@@ -1,6 +1,6 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+public static void main(String[] args) { 
+	String[] foodTypes = getFoodTypes(); // Creating a string foodtype array
+	String myType = foodTypes[2]; assigning mytype = to foodtypes array 2
 
 	String[] foodsOfMyType = getFoodsByType(myType);
 	
@@ -8,37 +8,37 @@ public static void main(String[] args) {
 		System.out.println(food);
 	}
 }
-
-public static String[] getFoodTypes() {
+// Here we are creating a String array foodTypes and returning the same foodTypes
+public static String[] getFoodTypes() { 
 	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
 	return foodTypes;
 }
 
-public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+public static String[] getFoodsByType(String type) {  //here we are returning the list of foods based on type
+	String[] foods = new String[3]; // A String type array has been declared. which can take 3 values.
 
-	switch(type) {
-	case "breakfast":
+	switch(type) { //Switch statements for type
+	case "breakfast": // case1 if the food type is breakfast it brings out this options
 		foods[0] = "pancakes";
 		foods[1] = "cereal";
 		foods[2] = "omelette";
 		break;
-	case "lunch":
+	case "lunch":    // case2 if the food type selected is lunch it brings out this options
 		foods[0] = "sandwich";
 		foods[1] = "salad";
 		foods[2] = "soup";
 		break;
-	case "dinner":
+	case "dinner": // case 3 if the food type selected is dinner is brings out this options
 		foods[0] = "curry";
 		foods[1] = "stir fry";
 		foods[2] = "burger";
 		break;
-	case "dessert":
+	case "dessert": // case 4 if the food type selected is dessert it brings out this options
 		foods[0] = "cake";
 		foods[1] = "ice cream";
 		foods[2] = "candy";
 		break;
-	case "snack":
+	case "snack": // case 5 if the food type selected is snack it brings out this options
 		foods[0] = "chips";
 		foods[1] = "apple";
 		foods[2] = "samosa";
