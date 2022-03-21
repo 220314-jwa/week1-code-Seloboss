@@ -1,24 +1,32 @@
-public class Food {
-	public String name;
-	public String type;
+public class Food { // creating the Food class that has two variables as name and type
+	public String name;  //Declaring a public String variable name
+	public String type; //Declaring a public String variable type 
 
-	public Food(String name, String type) {
-		this.name = name;
-		this.type = type;
+  
+	public Food(String name, String type) { // creating a function Food which take name and type as the input arguments
+		this.name = name;  //assigning name argument to the instance variable name of class
+		this.type = type;  //assigning type argument to the instance variable type of class
 	}
 
-	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
+	public void cook() { // Declaring a function named cook
+		if (!name.contains("cooked")) { // checking if the name contains the string "cooked" or not
+                                       // in this case the name that has been passed from main class is potato
+                                       // this means that the name does not contain string "cooked"
+			name = "cooked " + name;  // string "cooked" is added with the name so the output would be =>cooked + name 
+                                      // new name would be "cooked" + name , means cooked is added with the existing name
 		}
 	}
 }
 
-public class Main {
-	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
-
+public class Main { //Declaring a main class
+	public static void main(String[] args) { //Declaring a main method
+		Food myFood = new Food("potato", "vegetable"); //creating a variale myFood of type Food and assign it with two values
+                                                        // potato as the name and vegetable as the type
+                                                           // as variable of Food type has two arguments as => name and type
+		myFood.cook(); //calling the function cook() over the variable myFood
+                       // in the function cook() the string "cooked" is added to the name value
+                       // here name = potato
+                    // therefore output = cooked potato
 		System.out.println(myFood.name);
 	}
 }
